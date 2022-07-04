@@ -1,0 +1,3 @@
+[submodule "be-simple-git-workflow"]
+	path = be-simple-git-workflow
+	url = git@github.com:hipopotamus/be-simple-git-workflow.git
