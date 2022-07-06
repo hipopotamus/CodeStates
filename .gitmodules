@@ -1,3 +1,9 @@
 [submodule "be-simple-git-workflow"]
 	path = be-simple-git-workflow
 	url = git@github.com:hipopotamus/be-simple-git-workflow.git
+[submodule "be-sprint-calculator"]
+	path = be-sprint-calculator
+	url = git@github.com:hipopotamus/be-sprint-calculator.git
+[submodule "subject/be-sprint-calculator"]
+	path = subject/be-sprint-calculator
+	url = git@github.com:hipopotamus/be-sprint-calculator.git
