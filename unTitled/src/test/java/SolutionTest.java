@@ -1,27 +1,47 @@
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.Test;
+
+import java.io.IOException;
+import java.util.Arrays;
 
 public class SolutionTest {
 
-    public int[] fibonacci(int num) {
+    public int arrLength(int[] arr){
         // TODO:
-        int[] result = new int[num + 1];
+            if (arr.length <= 1) return arr.length;
 
-        if (num >= 0) {
-            result[0] = 0;
-        }
-        if (num >= 1) {
-            result[1] = 1;
+            int[] newArr = Arrays.copyOfRange(arr, 0, arr.length - 1);
+            return 1 + arrLength(newArr);
+    }
+
+    public static class testClass{
+        int hi = 3;
+        String morning = "hello";
+
+        public int getHi() {
+            return hi;
         }
 
-        for (int i = 2; i < result.length; i++) {
-            result[i] = result[i - 1] + result[i - 2];
+        public void setHi(int hi) {
+            this.hi = hi;
         }
-        return result;
 
+        public String getMorning() {
+            return morning;
+        }
+
+        public void setMorning(String morning) {
+            this.morning = morning;
+        }
     }
 
     @Test
-    public void solutionTest() {
-
+    public void solutionTest() throws IOException {
+        ObjectMapper objectMapper = new ObjectMapper();
+        testClass testClass = new testClass();
+        Object[] test = new Object[]{testClass, 2, new Object[]{"a", "b"}, 3};
+        String s = objectMapper.writeValueAsString(test);
+        System.out.println(s);
+        System.out.println(s instanceof String);
     }
 }
