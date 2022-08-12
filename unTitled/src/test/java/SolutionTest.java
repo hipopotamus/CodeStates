@@ -1,47 +1,40 @@
-import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.Test;
-
-import java.io.IOException;
-import java.util.Arrays;
 
 public class SolutionTest {
 
-    public int arrLength(int[] arr){
+    public int[][] rotateMatrix(int[][] matrix, int K) {
         // TODO:
-            if (arr.length <= 1) return arr.length;
-
-            int[] newArr = Arrays.copyOfRange(arr, 0, arr.length - 1);
-            return 1 + arrLength(newArr);
+        if (matrix == null || matrix.length == 0) {
+            return null;
+        }
+        K = K % 4;
+        return locate(matrix, K, 0);
     }
 
-    public static class testClass{
-        int hi = 3;
-        String morning = "hello";
-
-        public int getHi() {
-            return hi;
+    private int[][] locate(int[][] matrix, int K, int depth) {
+        if (depth == K) {
+            return matrix;
         }
-
-        public void setHi(int hi) {
-            this.hi = hi;
+        int[][] resultMatrix = new int[matrix[0].length][matrix.length];
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix[0].length; j++) {
+                resultMatrix[j][matrix.length - 1 - i] = matrix[i][j];
+            }
         }
-
-        public String getMorning() {
-            return morning;
-        }
-
-        public void setMorning(String morning) {
-            this.morning = morning;
-        }
+        return locate(resultMatrix, K, depth + 1);
     }
 
     @Test
-    public void solutionTest() throws IOException {
-        ObjectMapper objectMapper = new ObjectMapper();
-        testClass testClass = new testClass();
-        Object[] test = new Object[]{testClass, 2, new Object[]{"a", "b"}, 3};
-        String s = objectMapper.writeValueAsString(test);
-        System.out.println(s);
-        System.out.println(s instanceof String);
+    public void solutionTest() {
+        int[][] matrix = new int[][]{
+                {1, 2, 3, 4, 99},
+                {5, 6, 7, 8, 99},
+                {9, 10, 11, 12, 99},
+                {13, 14, 15, 16, 99}
+        };
+        int K = 1;
+
+        int[][] rotatedMatrix = rotateMatrix(matrix, K);
+        System.out.println("h");
     }
 }
