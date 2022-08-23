@@ -1,9 +1,6 @@
-[submodule "be-simple-git-workflow"]
-	path = be-simple-git-workflow
+[submodule "pair/Section1/Simple_Git_Workflow/be-simple-git-workflow"]
+	path = pair/Section1/Simple_Git_Workflow/be-simple-git-workflow
 	url = git@github.com:hipopotamus/be-simple-git-workflow.git
-[submodule "be-sprint-calculator"]
-	path = be-sprint-calculator
-	url = git@github.com:hipopotamus/be-sprint-calculator.git
 [submodule "subject/be-sprint-calculator"]
 	path = subject/be-sprint-calculator
 	url = git@github.com:hipopotamus/be-sprint-calculator.git
@@ -13,3 +10,9 @@
 [submodule "pair/Section3/be-homework-controller"]
 	path = pair/Section3/be-homework-controller
 	url = git@github.com:hipopotamus/be-homework-controller.git
+[submodule "pair/Section3/be-homework-dto"]
+	path = pair/Section3/be-homework-dto
+	url = git@github.com:hipopotamus/be-homework-dto.git
+[submodule "pair/Section3/be-homework-mapper"]
+	path = pair/Section3/be-homework-mapper
+	url = git@github.com:hipopotamus/be-homework-mapper.git
