@@ -1,12 +1,12 @@
-[submodule "pair/Section1/Simple_Git_Workflow/be-simple-git-workflow"]
-	path = pair/Section1/Simple_Git_Workflow/be-simple-git-workflow
-	url = git@github.com:hipopotamus/be-simple-git-workflow.git
 [submodule "subject/be-sprint-calculator"]
 	path = subject/be-sprint-calculator
 	url = git@github.com:hipopotamus/be-sprint-calculator.git
 [submodule "subject/be-sprint-stringify-json"]
 	path = subject/be-sprint-stringify-json
 	url = git@github.com:hipopotamus/be-sprint-stringify-json.git
+[submodule "pair/Section1/be-simple-git-workflow"]
+	path = pair/Section1/be-simple-git-workflow
+	url = git@github.com:hipopotamus/be-simple-git-workflow.git
 [submodule "pair/Section3/be-homework-controller"]
 	path = pair/Section3/be-homework-controller
 	url = git@github.com:hipopotamus/be-homework-controller.git
