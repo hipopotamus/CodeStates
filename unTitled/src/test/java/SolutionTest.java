@@ -1,40 +1,33 @@
 import org.junit.jupiter.api.Test;
 
+import java.util.Arrays;
+import java.util.Comparator;
+import java.util.PriorityQueue;
+
 public class SolutionTest {
 
-    public int[][] rotateMatrix(int[][] matrix, int K) {
-        // TODO:
-        if (matrix == null || matrix.length == 0) {
-            return null;
+    public int[] heapSort(int[] arr) {
+        PriorityQueue<Integer> queue = new PriorityQueue<>(Comparator.naturalOrder());
+        for (int element : arr) {
+            queue.offer(element);
         }
-        K = K % 4;
-        return locate(matrix, K, 0);
+        for (int i = 0; i < arr.length; i++) {
+            arr[i] = queue.poll();
+        }
+        return arr;
     }
 
-    private int[][] locate(int[][] matrix, int K, int depth) {
-        if (depth == K) {
-            return matrix;
-        }
-        int[][] resultMatrix = new int[matrix[0].length][matrix.length];
-        for (int i = 0; i < matrix.length; i++) {
-            for (int j = 0; j < matrix[0].length; j++) {
-                resultMatrix[j][matrix.length - 1 - i] = matrix[i][j];
-            }
-        }
-        return locate(resultMatrix, K, depth + 1);
-    }
+
 
     @Test
     public void solutionTest() {
-        int[][] matrix = new int[][]{
-                {1, 2, 3, 4, 99},
-                {5, 6, 7, 8, 99},
-                {9, 10, 11, 12, 99},
-                {13, 14, 15, 16, 99}
-        };
-        int K = 1;
+        int[] output = heapSort(new int[]{5, 4, 3, 2, 1});
+        System.out.println(Arrays.toString(output));
 
-        int[][] rotatedMatrix = rotateMatrix(matrix, K);
-        System.out.println("h");
+        output = heapSort(new int[]{3, 1, 21});
+        System.out.println(Arrays.toString(output));
+
+        output = heapSort(new int[]{4, 10, 3, 5, 1});
+        System.out.println(Arrays.toString(output));
     }
 }
