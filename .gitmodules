@@ -16,3 +16,9 @@
 [submodule "pair/Section3/be-homework-mapper"]
 	path = pair/Section3/be-homework-mapper
 	url = git@github.com:hipopotamus/be-homework-mapper.git
+[submodule "pair/Section3/be-homework-exception"]
+	path = pair/Section3/be-homework-exception
+	url = git@github.com:hipopotamus/be-homework-exception.git
+[submodule "pair/Section3/be-homework-jdbc"]
+	path = pair/Section3/be-homework-jdbc
+	url = git@github.com:hipopotamus/be-homework-jdbc.git

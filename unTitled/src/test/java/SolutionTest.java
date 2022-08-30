@@ -1,33 +1,58 @@
 import org.junit.jupiter.api.Test;
 
-import java.util.Arrays;
-import java.util.Comparator;
-import java.util.PriorityQueue;
-
 public class SolutionTest {
 
-    public int[] heapSort(int[] arr) {
-        PriorityQueue<Integer> queue = new PriorityQueue<>(Comparator.naturalOrder());
-        for (int element : arr) {
-            queue.offer(element);
+    static int[] dRow = {0, 1, 0, -1};
+    static int[] dCol = {1, 0, -1, 0};
+
+    private void dfs(Character[][] matrix, boolean[][] check, StringBuilder stringBuilder,
+                     int row, int col, int direction) {
+        if (check[row][col]) {
+            return;
         }
-        for (int i = 0; i < arr.length; i++) {
-            arr[i] = queue.poll();
+        stringBuilder.append(matrix[row][col]);
+        check[row][col] = true;
+
+        int nextRow = row + dRow[direction];
+        int nextCol = col + dCol[direction];
+
+        if (nextRow < 0 || nextRow >= matrix.length || nextCol < 0 || nextCol >= matrix[0].length
+                || check[nextRow][nextCol]) {
+            direction = (direction + 1) % 4;
+            nextRow = row + dRow[direction];
+            nextCol = col + dCol[direction];
         }
-        return arr;
+
+        dfs(matrix, check, stringBuilder, nextRow, nextCol, direction);
     }
 
+    public String spiralTraversal(Character[][] matrix) {
+        // TODO:
+        boolean[][] check = new boolean[matrix.length][matrix[0].length];
+        StringBuilder stringBuilder = new StringBuilder();
+
+        dfs(matrix, check, stringBuilder, 0, 0, 0);
+        return stringBuilder.toString();
+    }
 
 
     @Test
     public void solutionTest() {
-        int[] output = heapSort(new int[]{5, 4, 3, 2, 1});
-        System.out.println(Arrays.toString(output));
+        Character[][] matrix = new Character[][]{
+                {'A', 'B', 'C'},
+                {'D', 'E', 'F'},
+                {'G', 'H', 'I'},
+        };
+        String output = spiralTraversal(matrix);
+        System.out.println(output);
 
-        output = heapSort(new int[]{3, 1, 21});
-        System.out.println(Arrays.toString(output));
-
-        output = heapSort(new int[]{4, 10, 3, 5, 1});
-        System.out.println(Arrays.toString(output));
+        matrix = new Character[][]{
+                {'T', 'y', 'r', 'i'},
+                {'i', 's', 't', 'o'},
+                {'n', 'r', 'e', 'n'},
+                {'n', 'a', 'L', ' '},
+        };
+        output = spiralTraversal(matrix);
+        System.out.println(output);
     }
 }
