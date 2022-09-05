@@ -22,3 +22,6 @@
 [submodule "pair/Section3/be-homework-jdbc"]
 	path = pair/Section3/be-homework-jdbc
 	url = git@github.com:hipopotamus/be-homework-jdbc.git
+[submodule "pair/Section3/be-homework-jpa"]
+	path = pair/Serction3/be-homwork-jpa
+	url = git@github.com:hipopotamus/be-homework-jpa.git 
