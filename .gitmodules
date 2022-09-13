@@ -25,3 +25,9 @@
 [submodule "pair/Section3/be-homework-jpa"]
 	path = pair/Serction3/be-homwork-jpa
 	url = git@github.com:hipopotamus/be-homework-jpa.git 
+[submodule "pair/Section3/be-homework-tx"]
+	path = pair/Section3/be-homework-tx
+	url = git@github.com:hipopotamus/be-homework-tx.git
+[submodule "pair/Section3/be-homework-testing-slice"]
+	path = pair/Section3/be-homework-testing-slice
+	url = git@github.com:hipopotamus/be-homework-testing-slice.git
